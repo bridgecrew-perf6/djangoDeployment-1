@@ -1,0 +1,41 @@
+{% extends "base.html"  %}
+
+{% block icerik %}
+<!-- 
+<ul>
+    {% for harf in harfler  %}
+    <li>{{harf|lower}}</li>
+    {% endfor %}
+</ul>
+
+{% if personel %}
+Personel sayısı: {{personel|length}}
+{% else %}
+<p>Personel bulunmuyor</p>
+{% endif %}
+<h3 class="text-danger">Çalışanlarımız</h3>
+<ol>
+
+    {% for kisi in personel %}
+    <li>{{kisi.ad|upper}} ({{kisi.yas|default:21}}) </li>
+    {% endfor %}
+</ol> -->
+{% block baslik %} Ana sayfa {% endblock %}
+<div class="row">
+    {% for product in products %}
+    <div class="col-4">
+        <div class="card">
+            <img src="https://cdn.dsmcdn.com//ty57/product/media/images/20210119/15/55214906/131969474/0/0_org.jpg"
+                class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                <p class="card-text">{{product.price}} | indirim: {{product.discount}} </p>
+                <a href="urunDetay?id={{product.id}}" class="btn btn-primary">Detaylar...</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html"  %}
+
+{% block icerik %}
+     <h3>{{urun.name}} Detayları:</h3>
+     <hr>
+     <p class="text-success">Fiyatı: {{urun.price}}</p>
+     <p class="text-success">Açıklama: {{urun.description}}</p>
+     <p class="text-success">İndirim: {{urun.discount}}</p>
+     
+
+{% endblock %}
